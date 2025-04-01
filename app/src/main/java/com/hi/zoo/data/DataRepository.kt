@@ -45,15 +45,25 @@ class DataRepository @Inject constructor(
         limit: Int = 0,
         offset: Int = 0
     ): List<Plant> {
+        Log.d("DataRepository", "Loading plants for query: $query, limit: $limit, offset: $offset")  // 輸出查詢參數
         val result = remoteDataSource.loadPlants(query, limit, offset)
-        return if (result.isSuccess) {
+
+        // 檢查載入結果
+        if (result.isSuccess) {
+            Log.d("DataRepository", "Remote data loaded successfully, size: ${result.data.size}")
             if (result.data.isNotEmpty()) {
                 localDataSource.savePlants(*result.data.toTypedArray())
+                Log.d("DataRepository", "Saved plants to local database")
             }
-            result.data
+            return result.data
         } else {
+            Log.e("DataRepository", "Error loading remote data: ${result.toString()}")  // 輸出錯誤資訊
             toastRemoteError()
-            localDataSource.loadPlants(query, limit, offset).data
+
+            val localPlants = localDataSource.loadPlants(query, limit, offset).data
+            Log.d("DataRepository", "Loaded plants from local database, size: ${localPlants.size}")
+            return localPlants
         }
     }
+
 }

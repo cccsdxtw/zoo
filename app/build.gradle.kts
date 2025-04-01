@@ -114,4 +114,9 @@ dependencies {
 
     // Jetpack Compose 需要這個
     implementation ("com.github.bumptech.glide:compose:1.0.0-beta01")
+
+    implementation ("androidx.appcompat:appcompat:1.6.1")
+
+    implementation ("com.google.android.material:material:1.10.0")
+    implementation ("androidx.compose.material3:material3:1.3.1")
 }

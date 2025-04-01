@@ -17,8 +17,7 @@ class PavilionViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _pavilions = MutableStateFlow<List<Pavilion>>(emptyList())
-    val pavilions: StateFlow<List<Pavilion>> = _pavilions.asStateFlow()
-
+    val pavilions: StateFlow<List<Pavilion>> = _pavilions
     init {
         loadPavilions()  // 🔥 App 啟動時就載入資料
     }
