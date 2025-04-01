@@ -1,3 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
-    <string name="app_name">zoo</string>
+    <string name="alias">別名</string>
+
+    <string name="all_plants">園內植物</string>
+
+    <string name="app_name">ZOO</string>
+
+    <string name="brief">簡介</string>
+
+    <string name="feature">特徵</string>
+
+    <string name="function">功能</string>
+
+    <string name="last_update">最後更新</string>
+
+    <string name="location">位置</string>
+
+    <string name="no_closed_information">無休館資訊</string>
+
+    <string name="open_on_web">在網頁開啟</string>
+
+    <string name="pavilion">園區</string>
+
+    <string name="request_failed_load_db">請求失敗，將讀取本地資料庫</string>
 </resources>
